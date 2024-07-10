@@ -1,4 +1,7 @@
-with open('Values.txt') as f:
+import sys
+
+
+with open(sys.argv[1]) as f:
     data = f.read().splitlines()
 f.close()
 
