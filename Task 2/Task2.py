@@ -1,15 +1,18 @@
+import sys
+
+
 def point_check(x0, y0, x, y):
     return (x0 - x) ** 2 + (y0 - y) ** 2
 
 
-f = open('Circle.txt')
+f = open(sys.argv[1])
 Center_of_Circle = f.readline().split()
 Center_of_Circle = [float(Center_of_Circle[0]), float(Center_of_Circle[1])]
 radius = float(f.readline())
 f.close()
 
 point = []
-with open('Coordinate_points.txt') as f:
+with open(sys.argv[2]) as f:
     for line in f:
         point.append([float(el) for el in line.split()])
         for el in point:
@@ -20,3 +23,4 @@ with open('Coordinate_points.txt') as f:
             else:
                 print('0')
         point.clear()
+        
